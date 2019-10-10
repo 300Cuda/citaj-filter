@@ -44,8 +44,6 @@
         }
     },
     "dependent_plugins": {
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        }
+
     }
 }

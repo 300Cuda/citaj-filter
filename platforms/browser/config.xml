@@ -6,12 +6,12 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>citaj_ ilter</name>
+    <name>Citaj Filter</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Citaj Filter
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+        Citaj Filter
     </author>
     <content src="index.html" />
     <access origin="*" />
