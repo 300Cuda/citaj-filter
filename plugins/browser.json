@@ -10,18 +10,6 @@
         "cordova-plugin-battery-status": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
@@ -31,27 +19,17 @@
         "cordova-plugin-device-orientation": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
+
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.citajfilter.app"
-        },
+        
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.citajfilter.app"
         },
