@@ -16,7 +16,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var ekran = document.getElementById("ekran");
-		cordova.InAppBrowser.open('https://www.citajfilter.com/test','_self', 'toolbar=no,location=no,status=no,menubar=no,zoom=no');
+		cordova.InAppBrowser.open('https://www.citajfilter.com','_self', 'toolbar=no,location=no,status=no,menubar=no,zoom=no');
 		
 
     }
