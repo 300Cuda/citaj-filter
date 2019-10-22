@@ -52,6 +52,7 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <access origin="*" />
+	<access launch-external='yes' origin='whatsapp:*'/>
     <allow-intent href="http://citajfilter.com/*" />
     <allow-intent href="https://citajfilter.com/*" />
     <allow-intent href="tel:*" />
