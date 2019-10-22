@@ -64,6 +64,6 @@
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
 	</feature>
 	<allow-navigation href="http://citajfilter.com/*" />
-	<allow-navigation href="viber://*" />
+	<preference name="AllowedSchemes" value="whatsapp,twitter,viber" />
 	
 </widget>
