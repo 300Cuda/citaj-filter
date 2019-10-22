@@ -52,12 +52,13 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <access origin="*" />
-    <allow-intent href="http://citajfilter.com/" />
-    <allow-intent href="http://citajfilter.com/" />
+    <allow-intent href="http://citajfilter.com/*" />
+    <allow-intent href="https://citajfilter.com/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+	<allow-intent href="whatsapp://*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
