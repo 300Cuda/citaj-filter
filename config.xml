@@ -62,6 +62,13 @@
 	<access origin="maps:*" launch-external="yes" />
     <platform name="android">
         <allow-intent href="market:*" />
+		<allow-intent href="http://*/*"/>
+		<allow-intent href="https://*/*"/>
+		<allow-intent href="tel:*"/>
+		<allow-intent href="sms:*"/>
+		<allow-intent href="mailto:*"/>
+		<allow-intent href="geo:*"/>
+		<allow-intent href="whatsapp:*"/>
     </platform>
 	<feature name="InAppBrowser">
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
