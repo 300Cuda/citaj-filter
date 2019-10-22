@@ -52,14 +52,14 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <access origin="*" />
-	<access launch-external='true' origin='whatsapp:*'/>
+	<access launch-external='yes' origin='whatsapp:*'/>
     <allow-intent href="http://citajfilter.com/*" />
     <allow-intent href="https://citajfilter.com/*" />
-	<access origin="mailto:*" launch-external="true" />
-	<access origin="tel:*" launch-external="true" />
-	<access origin="sms:*" launch-external="true" />
-	<access origin="geo:*" launch-external="true" />
-	<access origin="maps:*" launch-external="true" />
+	<access origin="mailto:*" launch-external="yes" />
+	<access origin="tel:*" launch-external="yes" />
+	<access origin="sms:*" launch-external="yes" />
+	<access origin="geo:*" launch-external="yes" />
+	<access origin="maps:*" launch-external="yes" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
