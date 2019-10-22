@@ -780,13 +780,16 @@ public class InAppBrowser extends CordovaPlugin {
         EditText edittext;
         CordovaWebView webView;
 		@Override
-       public boolean shouldOverrideUrlLoading(WebView webView, String url) {
-		if( url.startsWith("viber:") {
-			   Intent intent = new Intent(Intent.ACTION_VIEW);
-			   intent.setData(Uri.parse(url));
-			   cordova.getActivity().startActivity(intent);
-			   return true;
-		   }
+		public boolean shouldOverrideUrlLoading(WebView view, String url) {
+			if( url.startsWith("http:") || url.startsWith("https:") ) {
+				return false;
+			}
+
+			// Otherwise allow the OS to handle it
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			view.getContext().startActivity( intent );
+			return true;
+		}
         /**
          * Constructor.
          *
