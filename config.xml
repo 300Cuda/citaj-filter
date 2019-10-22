@@ -63,6 +63,6 @@
 	<feature name="InAppBrowser">
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
 	</feature>
-	<allow-navigation href="*" />
+	<allow-navigation href="http://citajfilter.com/*" />
 	
 </widget>
