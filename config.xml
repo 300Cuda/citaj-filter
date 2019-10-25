@@ -68,7 +68,7 @@
 		<allow-intent href="sms:*"/>
 		<allow-intent href="mailto:*"/>
 		<allow-intent href="geo:*"/>
-		<allow-intent href="whatsapp:*"/>
+		<allow-intent href="whatsapp:*" />
     </platform>
 	<feature name="InAppBrowser">
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
