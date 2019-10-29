@@ -34,36 +34,10 @@ var app = {
 		ref.addEventListener('loadstart', function(event) { 
 			trenutni_url = event.url; 			
 		});
-		// Once the InAppBrowser finishes loading
 		ref.addEventListener("loadstop", function() {
-
-		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
-		  // 2nd Create the button
 		  ref.executeScript({
-			code: "var button = document.createElement('Button'); button.innerHTML = 'Share';button.onclick = function () {alert('SVE')}; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); "
-		  });
-
-		  // Start an interval
-		  var loop = setInterval(function() {
-
-			// Execute JavaScript to check if 'hidden' is 'yes' in the
-			// child browser's localStorage.
-			ref.executeScript({
-				code: "localStorage.getItem( 'hidden' )"
-			  },
-			  function(values) {
-				var hidden = values[0];
-
-				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
-				if (hidden === 'yes') {
-					clearInterval(loop);
-				  
-				}
-			  }
-			);
+			code: "var button = document.createElement('Button'); button.innerHTML = 'Share';button.onclick = function () {otherShare(trenutni_url)}; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); "
 		  });
 		});
-
     }
-
 };
