@@ -1,11 +1,13 @@
  var brojac = 0;
- var trenutni_url = '';
+ 
  window.onerror = function(msg, url, linenumber) {
     alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
     return true;
 }
  
-
+ function otherShare(url){
+	 window.plugins.socialsharing.share(null, null,null,url);
+  };
 var app = {
     // Application Constructor
     initialize: function() {
@@ -24,7 +26,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-
+		var trenutni_url = ''
 		var initialURL = 'https://www.citajfilter.com'
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
@@ -32,17 +34,41 @@ var app = {
 		ref.addEventListener('loadstart', function(event) { 
 			trenutni_url = event.url; 			
 		});
-		function otherShare(){
-			window.plugins.socialsharing.share(null, null,null,trenutni_url);
-		 };
+		// Once the InAppBrowser finishes loading
 		ref.addEventListener("loadstop", function() {
+
+		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
+		  // 2nd Create the button
 		  ref.executeScript({
-			code: "var sbutton = document.createElement('Button'); sbutton.innerHTML = 'Share'; sbutton.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(sbutton);sbutton.setAttribute('id','share');"
-			
+			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.setAttribute('onclick','otherShare(trenutni_url);');"
+		  });
+
+		  // Start an interval
+		  var loop = setInterval(function() {
+
+			// Execute JavaScript to check if 'hidden' is 'yes' in the
+			// child browser's localStorage.
+			ref.executeScript({
+				code: "localStorage.getItem( 'hidden' )"
+			  },
+			  function(values) {
+				var hidden = values[0];
+
+				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
+				if (hidden === 'yes') {
+					brojac ++
+					if(brojac == 1){
+						otherShare(trenutni_url);
+						brojac = 0;
+					}
+					clearInterval(loop);
+				  
+				}
+			  }
+			);
 		  });
 		});
-		if (document.getElementById('share') != null){
-			document.getElementById('share').onclick = function(){alert (trenutni_url)};
-		}
+
     }
+
 };
