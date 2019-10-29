@@ -24,6 +24,7 @@ var app = {
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
+		document.getElementById('ekran').innerHTML = ref
 		ref.addEventListener('loadstart', function(event) { 
 			trenutni_url = event.url; 			
 		});
