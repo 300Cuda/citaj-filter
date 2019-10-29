@@ -42,7 +42,7 @@ var app = {
 		 };
 		ref.addEventListener("loadstop", function() {
 		  ref.executeScript({
-			code: "var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.onclick = otherShare() "
+			code: "var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.onclick = function(){otherShare();}; "
 		  });
 		});
     }
