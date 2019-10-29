@@ -41,6 +41,8 @@ var app = {
 			
 		  });
 		});
-		document.getElementById('share').onclick = otherShare();
+		if (document.getElementById('share') != null){
+			document.getElementById('share').onclick = otherShare();
+		}
     }
 };
