@@ -50,16 +50,17 @@ var app = {
 			// child browser's localStorage.
 			ref.executeScript({
 				code: "localStorage.getItem( 'hidden' )"
-				alert ('TUSMO');
 			  },
 			  function(values) {
 				var hidden = values[0];
 
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
-					brojac++
-					alert (brojac);
-
+					brojac ++
+					if(brojac == 1){
+						otherShare(trenutni_url);
+						brojac = 0;
+					}
 					clearInterval(loop);
 				  
 				}
