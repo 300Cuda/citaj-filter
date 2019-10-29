@@ -35,30 +35,8 @@ var app = {
 		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
 		  // 2nd Create the button
 		  ref.executeScript({
-			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;'; document.body.appendChild(button); button.setAttribute('onclick','otherShare();');"
+			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;'; document.body.appendChild(button); button.setAttribute('onclick','alert('TUSMO');');"
 		  });
-
-		  // Start an interval
-		  var loop = setInterval(function() {
-
-			// Execute JavaScript to check if 'hidden' is 'yes' in the
-			// child browser's localStorage.
-			ref.executeScript({
-				code: "localStorage.getItem( 'hidden' )"
-			  },
-			  function(values) {
-				var hidden = values[0];
-
-				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
-				if (hidden === 'yes') {
-				  clearInterval(loop);
-				  ref.hide();
-				}
-			  }
-			);
-		  });
-		});
-		
 		
 		ref.addEventListener('loadstart', function(event) { 
 			trenutni_url = event.url; 			
