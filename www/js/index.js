@@ -57,8 +57,10 @@ var app = {
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
 					otherShare(trenutni_url);
+					ref.executeScript({
+						code: "localStorage.setItem('hidden','')"
+					},
 					clearInterval(loop);
-					ref.hide();
 				  
 				}
 			  }
