@@ -36,7 +36,7 @@ var app = {
 		});
 		ref.addEventListener("loadstop", function() {
 		  ref.executeScript({
-			code: "var button = document.createElement('Button'); button.innerHTML = 'Share';button.onclick = function () {otherShare(trenutni_url)}; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); "
+			code: "var button = document.createElement('Button'); button.innerHTML = 'Share';button.onclick = function () {otherShare("+trenutni_url+")}; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); "
 		  });
 		});
     }
