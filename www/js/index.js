@@ -48,13 +48,16 @@ var app = {
 
 			// Execute JavaScript to check if 'hidden' is 'yes' in the
 			// child browser's localStorage.
-
+			ref.executeScript({
+				code: "localStorage.getItem( 'hidden' )"
+			  },
 			  function(values) {
 				var hidden = values[0];
 
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
 					otherShare(trenutni_url);
+					hidden = ''
 					clearInterval(loop);
 				  
 				}
