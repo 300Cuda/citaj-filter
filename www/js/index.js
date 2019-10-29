@@ -23,11 +23,7 @@ var app = {
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
 		ref.addEventListener('loadstart', function(event) { 
-			trenutni_url = event.url; 
-			if (trenutni_url.includes('http://viber:')){
-				cordova.InAppBrowser.open(trenutni_url, '_self', opcije);
-			}				
-			
+			trenutni_url = event.url; 			
 		});
     }
 

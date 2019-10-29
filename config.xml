@@ -30,9 +30,6 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <platform name="android">
-		<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-			<application android:usesCleartextTraffic="true" />
-		</edit-config>
 	    <preference name="android-minSdkVersion" value="14" />
 		<preference name="android-targetSdkVersion" value="28" />
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
@@ -54,7 +51,6 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
 		<access origin="*" />
-		<access origin="whatsapp:*" launch-external="yes" />
 		<allow-intent href="http://citajfilter.com/*" />
 		<allow-intent href="https://citajfilter.com/*" />
 		<access origin="mailto:*" />
@@ -69,8 +65,7 @@
 		<allow-intent href="sms:*"/>
 		<allow-intent href="mailto:*"/>
 		<allow-intent href="geo:*"/>
-		<allow-intent href="whatsapp:*" />
-		<allow-navigation href="http://citajfilter.com/*" />
+		<allow-navigation href="*" />
     </platform>
 
 	<feature name="InAppBrowser">
