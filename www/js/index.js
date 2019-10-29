@@ -33,6 +33,7 @@ var app = {
 			trenutni_url = event.url; 			
 		});
 		function otherShare(){
+			alert (trenutni_url);
 			if (trenutni_url != ''){
 				window.plugins.socialsharing.share(null, null,null,trenutni_url);
 			}else{
