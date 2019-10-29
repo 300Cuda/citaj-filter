@@ -4,7 +4,7 @@
 }
  
  function otherShare(url){
-	 window.plugins.socialsharing.share('General share Message', null, url, null);
+	 window.plugins.socialsharing.share(null, null,null,url);
   };
 var app = {
     // Application Constructor
