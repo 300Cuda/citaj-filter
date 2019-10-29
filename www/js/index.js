@@ -23,7 +23,10 @@ var app = {
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
 		ref.addEventListener('loadstart', function(event) { trenutni_url = event.url; });
-		alert (trenutni_url);
+		if trenutni_url.substring(0, 27) != initialURL{
+			
+			alert (trenutni_url);
+		}
     }
 
 };
