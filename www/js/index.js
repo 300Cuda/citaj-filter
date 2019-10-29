@@ -18,15 +18,7 @@ var app = {
 		var initialURL = 'https://www.citajfilter.com'
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
-		var browser = cordova.InAppBrowser.open(initialURL, meta, opcije);
-        if (browser.on('loadstart').subscribe)
-		browser.on('loadstart').subscribe((e: InAppBrowserEvent) => {
-		if (e && e.url)
-			url = e.url;
-			alert (url)
-		});
-		
-		
+		cordova.InAppBrowser.open(initialURL, meta, opcije);
 
     }
 
