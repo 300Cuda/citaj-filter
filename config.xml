@@ -30,6 +30,9 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <platform name="android">
+		<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+			<application android:usesCleartextTraffic="true" />
+		</edit-config>
 	    <preference name="android-minSdkVersion" value="14" />
 		<preference name="android-targetSdkVersion" value="28" />
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
@@ -50,18 +53,16 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
-    </platform>
-    <access origin="*" />
-	<access origin="whatsapp:*" launch-external="yes" />
-    <allow-intent href="http://citajfilter.com/*" />
-    <allow-intent href="https://citajfilter.com/*" />
-	<access origin="mailto:*" />
-	<access origin="tel:*"/>
-	<access origin="sms:*"/>
-	<access origin="geo:*"/>
-	<access origin="maps:*"/>
-    <platform name="android">
-        <allow-intent href="market:*" />
+		<access origin="*" />
+		<access origin="whatsapp:*" launch-external="yes" />
+		<allow-intent href="http://citajfilter.com/*" />
+		<allow-intent href="https://citajfilter.com/*" />
+		<access origin="mailto:*" />
+		<access origin="tel:*"/>
+		<access origin="sms:*"/>
+		<access origin="geo:*"/>
+		<access origin="maps:*"/>
+		<allow-intent href="market:*" />
 		<allow-intent href="http://*/*"/>
 		<allow-intent href="https://*/*"/>
 		<allow-intent href="tel:*"/>
@@ -69,11 +70,13 @@
 		<allow-intent href="mailto:*"/>
 		<allow-intent href="geo:*"/>
 		<allow-intent href="whatsapp:*" />
+		<allow-navigation href="http://citajfilter.com/*" />
     </platform>
+
 	<feature name="InAppBrowser">
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
 	</feature>
-	<allow-navigation href="http://citajfilter.com/*" />
+	
 
 	
 </widget>
