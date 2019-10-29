@@ -3,8 +3,8 @@
     return true;
 }
  
- function otherShare(){
-	 window.plugins.socialsharing.share('General share Message', null, null, null);
+ function otherShare(url){
+	 window.plugins.socialsharing.share('General share Message', null, url, null);
   };
 var app = {
     // Application Constructor
@@ -29,6 +29,9 @@ var app = {
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
+		ref.addEventListener('loadstart', function(event) { 
+			trenutni_url = event.url; 			
+		});
 		// Once the InAppBrowser finishes loading
 		ref.addEventListener("loadstop", function() {
 
@@ -52,15 +55,13 @@ var app = {
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
 				  clearInterval(loop);
-				  alert('TUSMO!');
+				  otherShare(trenutni_url);
 				}
 			  }
 			);
 		  });
 		});
-		ref.addEventListener('loadstart', function(event) { 
-			trenutni_url = event.url; 			
-		});
+
     }
 
 };
