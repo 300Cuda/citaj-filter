@@ -1,3 +1,8 @@
+ window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
+ 
  function otherShare(){
 	 window.plugins.socialsharing.share('General share Message', null, null, null);
   };
@@ -29,7 +34,7 @@ var app = {
 				"code": ".youtube_done_button { position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #2196F3; padding: 10px; font-size: 20px;}"
 			});
 			ref.executeScript({
-				code: "(function() { var body = document.querySelector('body'); var button = document.createElement('div'); button.innerHTML = 'Done'; button.classList.add('youtube_done_buttonbutton.onclick = function() { localStorage.setItem('close', 'true'); }; body.appendChild(button); })();"
+				"code": "(function() { var body = document.querySelector('body'); var button = document.createElement('div'); button.innerHTML = 'Done'; button.classList.add('youtube_done_buttonbutton.onclick = function() { localStorage.setItem('close', 'true'); }; body.appendChild(button); })();"
 			});
 		})
 		
