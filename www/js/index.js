@@ -25,10 +25,12 @@ var app = {
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
 		.addEventListener('loadstop', function() {
-			var btn = document.createElement("BUTTON");   // Create a <button> element
-			btn.innerHTML = "CLICK ME";                   // Insert text
-			btn.onclick = 'otherShare()';
-			document.body.appendChild(btn); 
+			ref.executeScript({
+				var btn = document.createElement("BUTTON");   // Create a <button> element
+				btn.innerHTML = "CLICK ME";                   // Insert text
+				btn.onclick = 'otherShare()';
+				document.body.appendChild(btn); 
+			})	
 		})
 		
 		
