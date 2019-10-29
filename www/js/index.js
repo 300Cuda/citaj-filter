@@ -42,8 +42,8 @@ var app = {
 		 };
 		ref.addEventListener("loadstop", function() {
 		  ref.executeScript({
-			code: "var sbutton = document.createElement('Button'); sbutton.innerHTML = 'Share'; sbutton.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(sbutton);"
-			sbutton.onclick = function(){otherShare()};
+			code: "var sbutton = document.createElement('Button'); sbutton.innerHTML = 'Share'; sbutton.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(sbutton);sbutton.onclick = function(){alert('AAAA')};"
+			
 		  });
 		});
     }
