@@ -27,7 +27,7 @@ var app = {
 		.addEventListener('loadstop', function() {
 			var btn = document.createElement("BUTTON");   // Create a <button> element
 			btn.innerHTML = "CLICK ME";                   // Insert text
-			btn.onclick = otherShare();
+			btn.onclick = 'otherShare()';
 			document.body.appendChild(btn); 
 		})
 		
