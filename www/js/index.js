@@ -49,14 +49,17 @@ var app = {
 			// Execute JavaScript to check if 'hidden' is 'yes' in the
 			// child browser's localStorage.
 			ref.executeScript({
-				alert ('TUSMO1');
+				code: "localStorage.getItem( 'hidden' )"
+				alert ('TUSMO');
 			  },
 			  function(values) {
 				var hidden = values[0];
 
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
-					alert ('TUSMO2');
+					brojac++
+					alert (brojac);
+
 					clearInterval(loop);
 				  
 				}
