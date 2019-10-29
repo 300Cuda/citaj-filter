@@ -48,9 +48,7 @@ var app = {
 
 			// Execute JavaScript to check if 'hidden' is 'yes' in the
 			// child browser's localStorage.
-			ref.executeScript({
-				code: "alert( 'hidden' )"
-			  },
+
 			  function(values) {
 				var hidden = values[0];
 
