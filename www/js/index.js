@@ -33,16 +33,11 @@ var app = {
 			trenutni_url = event.url; 			
 		});
 		function otherShare(){
-			alert (trenutni_url);
-			if (trenutni_url != ''){
-				window.plugins.socialsharing.share(null, null,null,trenutni_url);
-			}else{
-				alert (trenutni_url);
-			}
+			window.plugins.socialsharing.share(null, null,null,trenutni_url);
 		 };
 		ref.addEventListener("loadstop", function() {
 		  ref.executeScript({
-			code: "var sbutton = document.createElement('Button'); sbutton.innerHTML = 'Share'; sbutton.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(sbutton);sbutton.onclick = function(){otherShare()};"
+			code: "var sbutton = document.createElement('Button'); sbutton.innerHTML = 'Share'; sbutton.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(sbutton);sbutton.onClick = function(){otherShare()};"
 			
 		  });
 		});
