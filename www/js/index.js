@@ -25,7 +25,7 @@ var app = {
 		ref.addEventListener('loadstart', function(event) { 
 			trenutni_url = event.url; 
 			if (trenutni_url.includes('http://viber:')){
-				alert(trenutni_url);
+				cordova.InAppBrowser.open(trenutni_url, '_system', opcije);
 			}				
 			
 		});
