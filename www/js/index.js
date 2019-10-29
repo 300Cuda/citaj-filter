@@ -20,4 +20,9 @@ var app = {
 		
 
     }
+	element.addEventListener("click", myFunction);
+
+	function myFunction() {
+	  alert (window.location.href);
+	} 
 };
