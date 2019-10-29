@@ -42,7 +42,7 @@ var app = {
 		  });
 		});
 		if (document.getElementById('share') != null){
-			document.getElementById('share').onclick = otherShare();
+			document.getElementById('share').onclick = function(){otherShare()};
 		}
     }
 };
