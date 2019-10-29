@@ -1,4 +1,6 @@
-
+ function otherShare(){
+	 window.plugins.socialsharing.share('General share Message', null, null, null);
+  };
 var app = {
     // Application Constructor
     initialize: function() {

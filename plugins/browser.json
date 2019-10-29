@@ -42,6 +42,9 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.citajfilter.app"
         }
+		"SocialSharing-PhoneGap-Plugin": {
+            "PACKAGE_NAME": "com.citajfilter.app"
+        }
     },
     "dependent_plugins": {
 

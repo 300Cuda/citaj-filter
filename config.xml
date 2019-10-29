@@ -29,6 +29,7 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
     <platform name="android">
 	    <preference name="android-minSdkVersion" value="14" />
 		<preference name="android-targetSdkVersion" value="28" />
@@ -72,6 +73,9 @@
 		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
 	</feature>
 	
+	<feature name="SocialSharing">
+		<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+	</feature>
 
 	
 </widget>
