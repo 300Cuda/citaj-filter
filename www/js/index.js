@@ -15,9 +15,18 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var ekran = cordova.InAppBrowser.open('https://www.citajfilter.com','_blank', 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no');
-		cordova.InAppBrowser.open('https://www.citajfilter.com','_blank', 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no');
-		ekran.addEventListener('loadstart', function() { alert(event.url); });
+		var initialURL = 'https://www.citajfilter.com'
+		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
+		var meta = '_blank'
+		browser = this.inAppBrowser.create(initialURL, meta, opcije);
+        if (browser.on('loadstart').subscribe)
+		browser.on('loadstart').subscribe((e: InAppBrowserEvent) => {
+		if (e && e.url)
+			url = e.url;
+			alert (url)
+		});
+		
+		
 
     }
 
