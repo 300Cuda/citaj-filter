@@ -7,7 +7,7 @@ window.onerror = function(msg, url, linenumber) {
  
  function otherShare(url){
 	 window.plugins.socialsharing.share(null, null,null,url);
-	 localStorage.setItem(key,'');
+	 localStorage.setItem('hidden','');
   };
 var app = {
     // Application Constructor
