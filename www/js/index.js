@@ -1,6 +1,6 @@
- var brojac = 0;
  
- window.onerror = function(msg, url, linenumber) {
+ 
+window.onerror = function(msg, url, linenumber) {
     alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
     return true;
 }
@@ -40,7 +40,7 @@ var app = {
 		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
 		  // 2nd Create the button
 		  ref.executeScript({
-			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.setAttribute('onclick','localStorage.setItem(key,keyval);');"
+			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;'; document.body.appendChild(button); button.setAttribute('onclick','localStorage.setItem(key,keyval);');"
 		  });
 
 		  // Start an interval
@@ -57,8 +57,8 @@ var app = {
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
 					otherShare(trenutni_url);
-					hidden = ''
 					clearInterval(loop);
+					ref.hide();
 				  
 				}
 			  }
