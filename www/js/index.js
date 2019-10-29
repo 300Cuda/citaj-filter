@@ -17,7 +17,7 @@ var app = {
     receivedEvent: function(id) {
         var ekran = document.getElementById("ekran");
 		cordova.InAppBrowser.open('https://www.citajfilter.com','_blank', 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no');
-	element.addEventListener("click", myFunction);
+	element.addEventListener("touchstart", myFunction);
 
 	function myFunction() {
 	  alert (window.location.href);
