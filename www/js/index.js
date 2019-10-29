@@ -29,7 +29,7 @@ var app = {
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
-		.addEventListener('loadstop', function() {
+		ref.addEventListener('loadstop', function() {
 			ref.insertCSS({
 				"code": ".youtube_done_button { position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #2196F3; padding: 10px; font-size: 20px;}"
 			});
