@@ -29,14 +29,35 @@ var app = {
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no'
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
-		ref.addEventListener('loadstop', function() {
-			ref.insertCSS({
-				"code": ".youtube_done_button { position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #2196F3; padding: 10px; font-size: 20px;}"
-			});
+		// Once the InAppBrowser finishes loading
+		ref.addEventListener("loadstop", function() {
+
+		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
+		  // 2nd Create the button
+		  ref.executeScript({
+			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Hide Map'; button.style = 'top:0;right:0;position:fixed;'; document.body.appendChild(button); button.setAttribute('onclick','localStorage.setItem(key,keyval);');"
+		  });
+
+		  // Start an interval
+		  var loop = setInterval(function() {
+
+			// Execute JavaScript to check if 'hidden' is 'yes' in the
+			// child browser's localStorage.
 			ref.executeScript({
-				"code": "(function() { var body = document.querySelector('body'); var button = document.createElement('div'); button.innerHTML = 'Done'; button.classList.add('youtube_done_buttonbutton.onclick = function() { localStorage.setItem('close', 'true'); }; body.appendChild(button); })();"
-			});
-		})
+				code: "localStorage.getItem( 'hidden' )"
+			  },
+			  function(values) {
+				var hidden = values[0];
+
+				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
+				if (hidden === 'yes') {
+				  clearInterval(loop);
+				  ref.hide();
+				}
+			  }
+			);
+		  });
+		});
 		
 		
 		ref.addEventListener('loadstart', function(event) { 
