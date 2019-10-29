@@ -26,10 +26,7 @@ var app = {
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
 		.addEventListener('loadstop', function() {
 			ref.executeScript({
-				var btn = document.createElement("BUTTON");   // Create a <button> element
-				btn.innerHTML = "CLICK ME";                   // Insert text
-				btn.onclick = 'otherShare()';
-				document.body.appendChild(btn); 
+				'code':'var btn = document.createElement("BUTTON");btn.innerHTML = "CLICK ME";btn.onclick = "otherShare()";document.body.appendChild(btn); '
 			})	
 		})
 		
