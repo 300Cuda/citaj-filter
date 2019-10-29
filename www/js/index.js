@@ -40,7 +40,7 @@ var app = {
 		  // 1st Clear out 'hidden' in localStorage for subsequent opens.
 		  // 2nd Create the button
 		  ref.executeScript({
-			code: "var key = 'hidden'; var keyval = 'yes'; localStorage.setItem('hidden',''); var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.setAttribute('onclick','localStorage.setItem(key,keyval);');"
+			code: "var button = document.createElement('Button'); button.innerHTML = 'Share'; button.style = 'top:0;right:0;position:fixed;color:#fcbc50'; document.body.appendChild(button); button.setAttribute('onclick','otherShare(trenutni_url);');"
 		  });
 
 		  // Start an interval
@@ -56,11 +56,6 @@ var app = {
 
 				// If 'hidden' is equal to 'yes', clear the interval and hide the InAppBrowser.
 				if (hidden === 'yes') {
-					brojac ++
-					if(brojac == 1){
-						otherShare(trenutni_url);
-						brojac = 0;
-					}
 					clearInterval(loop);
 				  
 				}
