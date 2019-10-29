@@ -78,3 +78,12 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+.youtube_done_button { 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    background: rgba(0, 0, 0, 0.8); 
+    color: #2196F3; 
+    padding: 10px; 
+    font-size: 20px;
+}

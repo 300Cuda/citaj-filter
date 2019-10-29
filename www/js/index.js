@@ -25,9 +25,12 @@ var app = {
 		var meta = '_blank'
 		var ref = cordova.InAppBrowser.open(initialURL, meta, opcije);
 		.addEventListener('loadstop', function() {
+			ref.insertCSS({
+				"code": ".youtube_done_button { position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #2196F3; padding: 10px; font-size: 20px;}"
+			});
 			ref.executeScript({
-				'code':'var btn = document.createElement("BUTTON");btn.innerHTML = "CLICK ME";btn.onclick = "otherShare()";document.body.appendChild(btn); '
-			})	
+				code: "(function() { var body = document.querySelector('body'); var button = document.createElement('div'); button.innerHTML = 'Done'; button.classList.add('youtube_done_buttonbutton.onclick = function() { localStorage.setItem('close', 'true'); }; body.appendChild(button); })();"
+			});
 		})
 		
 		
