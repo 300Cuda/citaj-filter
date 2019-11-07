@@ -30,10 +30,10 @@ var app = {
 		
 	document.addEventListener('deviceready', function() {
 		var success = function(status) {
-        alert('Message: ' + status);
+        
 		};
 		var error = function(status) {
-			alert('Error: ' + status);
+			
 		};
 		window.CacheClear(success, error);
 	});
