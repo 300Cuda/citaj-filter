@@ -27,6 +27,20 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+		
+	document.addEventListener('deviceready', function() {
+		var success = function(status) {
+        alert('Message: ' + status);
+		};
+		var error = function(status) {
+			alert('Error: ' + status);
+		};
+		window.CacheClear(success, error);
+	});
+		
+		
+		
+		
 		var trenutni_url = ''
 		var initialURL = 'https://www.citajfilter.com'
 		var opcije = 'hideurlbar=yes,toolbar=no,location=no,status=no,menubar=no,zoom=no,clearcache=yes,clearsessioncache=yes,'
