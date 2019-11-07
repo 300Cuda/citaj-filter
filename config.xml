@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.citajfilter.app" version="1.0.7" 
+<widget id="com.citajfilter.app" version="1.0.8" 
 
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:android = "http://schemas.android.com/apk/res/android"
 	
-	xmlns:gap="http://phonegap.com/ns/1.0" versionCode = "19" >
+	xmlns:gap="http://phonegap.com/ns/1.0" versionCode = "20" >
 	<gap:config-file platform="android" parent="/manifest">
     <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" />
 	</gap:config-file>
